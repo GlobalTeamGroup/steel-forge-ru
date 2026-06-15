@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>STEEL FORGE — Металлообработка в Санкт-Петербурге</title>
+  <meta name="description" content="STEEL FORGE — производство металлоконструкций полного цикла. Сварочные работы, лазерная резка, металлоконструкции, токарные работы. 16 лет, 3000+ объектов по всей России." />
+  <meta name="keywords" content="металлообработка, сварочные работы, лазерная резка, металлоконструкции, токарные работы, Санкт-Петербург, STEEL FORGE" />
+  <meta property="og:title" content="STEEL FORGE — Металлообработка" />
+  <meta property="og:description" content="Сварочные работы, металлоконструкции, лазерная резка. От проекта до монтажа. 16 лет. 3000+ объектов." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://steelforge.ru" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <canvas id="gl-canvas"></canvas>
+  <div class="grain-overlay"></div>
+
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">STEEL FORGE</div>
+      <div class="loader-tagline">Железо не прощает ошибок — мы их не делаем</div>
+      <div class="loader-bar-wrap"><div id="progress-bar"></div></div>
+      <div class="loader-text">ЗАГРУЗКА...</div>
+    </div>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <img src="images/logo.png" alt="STEEL FORGE" class="nav-logo" />
+      <span class="nav-name">STEEL FORGE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services" class="nav-link" data-section="1">Услуги</a></li>
+      <li><a href="#portfolio" class="nav-link" data-section="2">Объекты</a></li>
+      <li><a href="#process" class="nav-link" data-section="3">Процесс</a></li>
+      <li><a href="#about" class="nav-link" data-section="4">О нас</a></li>
+      <li><a href="#contact" class="nav-link" data-section="5">Контакты</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Получить расчёт</a>
+    <button class="burger" id="burger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-drawer" id="nav-drawer">
+    <button class="drawer-close" id="drawer-close" aria-label="Закрыть меню">&#10005;</button>
+    <ul class="drawer-links">
+      <li><a href="#hero" class="drawer-link">Главная</a></li>
+      <li><a href="#services" class="drawer-link">Услуги</a></li>
+      <li><a href="#portfolio" class="drawer-link">Объекты</a></li>
+      <li><a href="#process" class="drawer-link">Процесс</a></li>
+      <li><a href="#about" class="drawer-link">О нас</a></li>
+      <li><a href="#contact" class="drawer-link">Контакты</a></li>
+    </ul>
+    <a href="tel:+78123456789" class="drawer-phone">+7 (812) 345-67-89</a>
+  </div>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <div id="ui-layer">
+    <div class="stage">
+
+      <!-- ═══ SECTION 0: HERO ═══ -->
+      <section class="page is-active" data-index="0" id="hero">
+        <div class="hero-content">
+          <div class="hero-badge reveal-3d">&#9889; МЕТАЛЛООБРАБОТКА &middot; С 2008 ГОДА</div>
+          <h1 class="hero-title reveal-3d">
+            STEEL<br><span class="accent">FORGE</span>
+          </h1>
+          <p class="hero-sub reveal-3d">Металл. Точность. Сила.</p>
+          <p class="hero-desc reveal-3d">
+            Сварочные работы, металлоконструкции, лазерная резка.<br>
+            От проекта до монтажа.
+          </p>
+          <div class="hero-btns reveal-3d">
+            <a href="#services" class="btn btn-primary">Наши услуги</a>
+            <a href="tel:+78123456789" class="btn btn-outline">&#128222; Позвонить</a>
+          </div>
+          <div class="hero-facts reveal-3d">
+            <div class="hero-fact">
+              <span class="fact-num">16</span>
+              <span class="fact-label">лет работы</span>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-fact">
+              <span class="fact-num">3000+</span>
+              <span class="fact-label">объектов</span>
+            </div>
+            <div class="hero-divider"></div>
+            <div class="hero-fact">
+              <span class="fact-num">45</span>
+              <span class="fact-label">специалистов</span>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-hint">
+          <span>ЛИСТАЙТЕ ВНИЗ</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION 1: SERVICES ═══ -->
+      <section class="page" data-index="1" id="services">
+        <div class="section-inner">
+          <div class="section-header reveal-3d">
+            <div class="section-tag">ЧТО МЫ ДЕЛАЕМ</div>
+            <h2 class="section-title">УСЛУГИ</h2>
+            <p class="section-subtitle">Полный цикл металлообработки</p>
+          </div>
+          <div class="cards-grid reveal-3d">
+
+            <div class="card">
+              <div class="card-icon">&#9881;&#65039;</div>
+              <div class="card-corner"></div>
+              <h3 class="card-title">Сварочные работы</h3>
+              <p class="card-desc">TIG, MIG, MAG сварка любых металлов. Аргонодуговая, полуавтоматическая и ручная дуговая сварка. Сварщики 5–6 разряда.</p>
+              <div class="card-tag">TIG &middot; MIG &middot; MAG</div>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">&#128300;</div>
+              <div class="card-corner"></div>
+              <h3 class="card-title">Лазерная резка</h3>
+              <p class="card-desc">Точность до 0.1мм, любые конфигурации. Сталь, нержавейка, алюминий. Лист до 20мм толщиной.</p>
+              <div class="card-tag">&plusmn;0.1мм &middot; ЛЮБОЙ МЕТАЛЛ</div>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">&#127959;&#65039;</div>
+              <div class="card-corner"></div>
+              <h3 class="card-title">Металлоконструкции</h3>
+              <p class="card-desc">Лестницы, ворота, навесы, решётки. Производим от эскиза до готовой конструкции с монтажом на объекте.</p>
+              <div class="card-tag">ПРОЕКТ &middot; ПРОИЗВОДСТВО &middot; МОНТАЖ</div>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">&#128297;</div>
+              <div class="card-corner"></div>
+              <h3 class="card-title">Токарные работы</h3>
+              <p class="card-desc">Детали любой сложности по чертежам. Фрезеровка, расточка, нарезание резьбы. Единичный заказ и серийное производство.</p>
+              <div class="card-tag">ПО ЧЕРТЕЖУ &middot; СЕРИЯ</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION 2: PORTFOLIO ═══ -->
+      <section class="page" data-index="2" id="portfolio">
+        <div class="section-inner">
+          <div class="section-header reveal-3d">
+            <div class="section-tag">НАШИ РАБОТЫ</div>
+            <h2 class="section-title">РЕАЛИЗОВАННЫЕ<br>ОБЪЕКТЫ</h2>
+            <p class="section-subtitle">Говорят сами за себя</p>
+          </div>
+          <div class="portfolio-grid reveal-3d">
+
+            <div class="portfolio-card">
+              <div class="portfolio-num">01</div>
+              <div class="portfolio-badge">ЧАСТНЫЙ ДОМ</div>
+              <h3 class="portfolio-title">Лестница на металлокаркасе</h3>
+              <p class="portfolio-desc">Нержавейка AISI 304, перила из стекла, ступени из дуба. Монтаж 3 дня.</p>
+              <div class="portfolio-meta">
+                <span>Нержавейка</span><span>&bull;</span><span>Частный заказ</span>
+              </div>
+            </div>
+
+            <div class="portfolio-card portfolio-card--large">
+              <div class="portfolio-num">02</div>
+              <div class="portfolio-badge">ПРОМЫШЛЕННЫЙ</div>
+              <h3 class="portfolio-title">Промышленные ворота</h3>
+              <p class="portfolio-desc">Автоматические секционные ворота 6&times;4м. Привод CAME, дистанционное управление. Утеплённая панель 45мм.</p>
+              <div class="portfolio-meta">
+                <span>6&times;4 метра</span><span>&bull;</span><span>Автоматика</span>
+              </div>
+            </div>
+
+            <div class="portfolio-card">
+              <div class="portfolio-num">03</div>
+              <div class="portfolio-badge">ДИЗАЙН</div>
+              <h3 class="portfolio-title">Декоративная решётка</h3>
+              <p class="portfolio-desc">Художественная ковка по авторскому эскизу. Горячая ковка, патинирование, лак.</p>
+              <div class="portfolio-meta">
+                <span>Художественная ковка</span><span>&bull;</span><span>Эксклюзив</span>
+              </div>
+            </div>
+
+            <div class="portfolio-card">
+              <div class="portfolio-num">04</div>
+              <div class="portfolio-badge">ПРОМЫШЛЕННЫЙ</div>
+              <h3 class="portfolio-title">Стальные балки</h3>
+              <p class="portfolio-desc">Несущие металлоконструкции для промышленного объекта. 200 тонн стали, срок — 45 рабочих дней.</p>
+              <div class="portfolio-meta">
+                <span>200 тонн</span><span>&bull;</span><span>45 дней</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION 3: PROCESS ═══ -->
+      <section class="page" data-index="3" id="process">
+        <div class="section-inner">
+          <div class="section-header reveal-3d">
+            <div class="section-tag">НАША МЕТОДОЛОГИЯ</div>
+            <h2 class="section-title">КАК МЫ РАБОТАЕМ</h2>
+          </div>
+          <div class="process-grid reveal-3d">
+
+            <div class="process-step">
+              <div class="step-icon">&#128208;</div>
+              <div class="step-num">01</div>
+              <h3 class="step-title">Техническое задание</h3>
+              <p class="step-desc">Принимаем чертежи или разрабатываем с нуля. Работаем с форматами DWG, PDF, DXF. Выезд на объект бесплатно.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">&#128202;</div>
+              <div class="step-num">02</div>
+              <h3 class="step-title">Расчёт и смета</h3>
+              <p class="step-desc">Точная стоимость за 1 рабочий день. Фиксируем цену в договоре — никаких скрытых доплат.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">&#128295;</div>
+              <div class="step-num">03</div>
+              <h3 class="step-title">Производство</h3>
+              <p class="step-desc">Собственный цех площадью 2500 м&#178;. Контроль качества на каждом этапе. Фотоотчёт в процессе.</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-icon">&#128667;</div>
+              <div class="step-num">04</div>
+              <h3 class="step-title">Доставка и монтаж</h3>
+              <p class="step-desc">Доставляем и устанавливаем по всей России. Собственный транспорт и бригада монтажников.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION 4: ABOUT ═══ -->
+      <section class="page" data-index="4" id="about">
+        <div class="section-inner about-inner">
+          <div class="about-left reveal-3d">
+            <div class="section-tag">STEEL FORGE</div>
+            <h2 class="section-title">О ПРОИЗВОДСТВЕ</h2>
+            <p class="about-sub">Металлообрабатывающий завод с 2008 года</p>
+            <p class="about-text">
+              STEEL FORGE — это производство полного цикла. Собственный парк оборудования, квалифицированные сварщики 5–6 разряда, контроль качества на каждом этапе. Мы не субподрядчики — всё делаем сами.
+            </p>
+            <p class="about-text">
+              Сертификат ISO 9001. Работаем с частными заказчиками, строительными компаниями и промышленными предприятиями по всей России.
+            </p>
+            <a href="#contact" class="btn btn-primary about-cta">Обсудить проект</a>
+          </div>
+          <div class="about-right reveal-3d">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-num">16</div>
+                <div class="stat-label">лет на рынке</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">3000+</div>
+                <div class="stat-label">объектов сдано</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">45</div>
+                <div class="stat-label">специалистов</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">ISO</div>
+                <div class="stat-label">9001 сертификат</div>
+              </div>
+            </div>
+            <div class="cert-strip">
+              <span>&#10003; ISO 9001</span>
+              <span>&#10003; СРО</span>
+              <span>&#10003; НАКС</span>
+              <span>&#10003; ГОСТ</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SECTION 5: CONTACT ═══ -->
+      <section class="page" data-index="5" id="contact">
+        <div class="section-inner contact-inner">
+          <div class="section-header reveal-3d">
+            <div class="section-tag">СВЯЗЬ С НАМИ</div>
+            <h2 class="section-title">ПОЛУЧИТЬ РАСЧЁТ</h2>
+            <p class="section-subtitle">Отправьте чертёж — ответим за 1 час</p>
+          </div>
+          <div class="contact-layout reveal-3d">
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">&#128222;</div>
+                <div class="contact-details">
+                  <div class="contact-label">Телефон</div>
+                  <a href="tel:+78123456789" class="contact-val">+7 (812) 345-67-89</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#9993;&#65039;</div>
+                <div class="contact-details">
+                  <div class="contact-label">Email</div>
+                  <a href="mailto:order@steelforge.ru" class="contact-val">order@steelforge.ru</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#128205;</div>
+                <div class="contact-details">
+                  <div class="contact-label">Адрес</div>
+                  <div class="contact-val">Санкт-Петербург,<br>Промышленная ул., 7</div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#128336;</div>
+                <div class="contact-details">
+                  <div class="contact-label">Режим работы</div>
+                  <div class="contact-val">Пн–Пт: 8:00–18:00</div>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleForm(event)">
+              <div class="form-group">
+                <label class="form-label">Ваше имя</label>
+                <input type="text" class="form-input" placeholder="Иван Петров" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Телефон</label>
+                <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Описание задачи</label>
+                <textarea class="form-input form-textarea" placeholder="Опишите что нужно сделать или прикрепите ссылку на чертёж..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                Отправить заявку &#8594;
+              </button>
+              <p class="form-note">Ответим в течение 1 рабочего часа</p>
+            </form>
+
+          </div>
+
+          <div class="footer-line reveal-3d">
+            <div class="footer-brand">STEEL FORGE</div>
+            <div class="footer-copy">&copy; 2024 STEEL FORGE. Все права защищены.</div>
+            <div class="footer-tags">Металлообработка &middot; Санкт-Петербург</div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /stage -->
+  </div><!-- /ui-layer -->
+
+  <script src="app.js"></script>
+</body>
+</html>
