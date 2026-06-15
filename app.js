@@ -1,7 +1,7 @@
-﻿// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// STEEL FORGE â€” app.js
+﻿// ═══════════════════════════════════════════════
+// STEEL FORGE — app.js
 // Cinematic Scroll Engine v1.0 | Russian Edition
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ═══════════════════════════════════════════════
 
 // === CONSTANTS ===
 const TOTAL_FRAMES = 430;     // steel-forge-ru frames
@@ -19,7 +19,7 @@ const canvas = document.getElementById('gl-canvas');
 const ctx    = canvas.getContext('2d');
 
 // IMPORTANT: canvasDpr is module-level so both resize() and drawFrame() use same value.
-// Never use canvas.width / devicePixelRatio in drawFrame() â€” use innerWidth instead.
+// Never use canvas.width / devicePixelRatio in drawFrame() — use innerWidth instead.
 let canvasDpr = 1;
 
 function resize() {
@@ -41,7 +41,7 @@ let isReady     = false;
 let animStarted = false;
 
 function frameName(i) {
-  // Pattern: frame_000001.webp â€¦ frame_000800.webp (6 zero-padded)
+  // Pattern: frame_000001.webp … frame_000800.webp (6 zero-padded)
   return `${FRAME_DIR}/frame_${String(i + 1).padStart(6, '0')}.webp`;
 }
 
@@ -62,14 +62,14 @@ async function loadAll() {
           const bar = document.getElementById('progress-bar');
           if (bar) bar.style.width = pct + '%';
 
-          // First frame loaded â€” start animation immediately
+          // First frame loaded — start animation immediately
           if (loadedCount === 1 && !animStarted) {
             isReady     = true;
             animStarted = true;
             startAnim();
           }
 
-          // All frames loaded â€” fade out loader
+          // All frames loaded — fade out loader
           if (loadedCount === TOTAL_FRAMES) {
             const loader = document.getElementById('loader');
             if (loader) {
@@ -119,21 +119,21 @@ function drawFrame(idx) {
   ctx.clearRect(0, 0, W, H);
   ctx.drawImage(img, x, y, iw, ih);
 
-  // â”€â”€ Radial vignette (industrial dark)
+  // ── Radial vignette (industrial dark)
   const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.15, W / 2, H / 2, H * 0.85);
   vig.addColorStop(0, 'rgba(8,8,8,0)');
   vig.addColorStop(1, 'rgba(8,8,8,0.82)');
   ctx.fillStyle = vig;
   ctx.fillRect(0, 0, W, H);
 
-  // â”€â”€ Bottom gradient darkening (for text legibility)
+  // ── Bottom gradient darkening (for text legibility)
   const bot = ctx.createLinearGradient(0, H * 0.55, 0, H);
   bot.addColorStop(0, 'rgba(8,8,8,0)');
   bot.addColorStop(1, 'rgba(8,8,8,0.90)');
   ctx.fillStyle = bot;
   ctx.fillRect(0, H * 0.55, W, H * 0.45);
 
-  // â”€â”€ Subtle top edge darkening (navbar area)
+  // ── Subtle top edge darkening (navbar area)
   const top = ctx.createLinearGradient(0, 0, 0, H * 0.12);
   top.addColorStop(0, 'rgba(8,8,8,0.5)');
   top.addColorStop(1, 'rgba(8,8,8,0)');
@@ -220,7 +220,7 @@ function handleForm(e) {
   e.preventDefault();
   const btn      = e.target.querySelector('button[type="submit"]');
   const original = btn.innerHTML;
-  btn.innerHTML  = 'ÐžÐ¢ÐŸÐ ÐÐ’Ð›Ð•ÐÐž âœ“';
+  btn.innerHTML  = 'ОТПРАВЛЕНО ✓';
   btn.style.background = 'rgba(255,107,53,0.8)';
   btn.disabled   = true;
   setTimeout(() => {
