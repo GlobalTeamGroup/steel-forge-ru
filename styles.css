@@ -19,15 +19,7 @@
   --nav-border: rgba(255, 107, 53, 0.5);
 
   /* 8-direction black text-shadow */
-  --ts:
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-   -1px  1px 0 #000,
-    1px  1px 0 #000,
-    0   -1px 0 #000,
-    0    1px 0 #000,
-   -1px  0   0 #000,
-    1px  0   0 #000;
+  --ts: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, 0 0 6px rgba(0,0,0,.7);
 }
 
 /* ── RESET & BASE ── */
